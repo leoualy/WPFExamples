@@ -1,0 +1,57 @@
+﻿<Window x:Class="KeySearchExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:KeySearchExample"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="textBoxWithWatermarkStyle" TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Grid>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <ScrollViewer x:Name="PART_ContentHost" Margin="4"/>
+                                </Border>
+                                <TextBlock Name="txtWater" Visibility="Collapsed"
+                                           Text="{TemplateBinding  local:TextBoxManager.Watermark }"
+                                           />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value=""/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="txtWater" Property="Visibility" Value="Visible"/>
+                                </MultiDataTrigger>
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+
+                </Setter>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    
+    
+    <GroupBox Header="关键字搜索">
+        <DockPanel HorizontalAlignment="Center">
+            <TextBox Name="txtFilter" Style="{StaticResource textBoxWithWatermarkStyle}" 
+                     Text="{Binding TextFilter,UpdateSourceTrigger=PropertyChanged}"
+                     local:TextBoxManager.Watermark="关键字"
+                     Width="140" Height="40" DockPanel.Dock="Top"
+                     />
+            <ListView ItemsSource="{Binding ViewSource.View}"
+                      
+                      >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+                
+            </ListView>
+        </DockPanel>
+    </GroupBox>
+</Window>
