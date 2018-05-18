@@ -10,8 +10,13 @@
             </VisualBrush.Visual>
         </VisualBrush>
     </Window.Background>
+    
     <Grid>
-        <Canvas Grid.Row="2" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5"
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center" 
                     Width="120" Height="120" >
@@ -100,5 +105,70 @@
             </Canvas.Triggers>
 
         </Canvas>
+
+
+        <!--右侧伸缩导航的实现-->
+        <Grid Width="48" Grid.Column="1" Height="560" HorizontalAlignment="Right">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation  Duration="0:0:0:0.2" Storyboard.TargetProperty="Width" To="240"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0:0.2" Storyboard.TargetProperty="Width" To="48"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="#FFB81E14" CornerRadius="12,0,0,12">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           FontSize="24"
+                           Foreground="White">
+                    <Run>导</Run>
+                    <LineBreak/>
+                    <Run>航</Run>
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0"/>
+            
+            
+            <Grid Grid.Column="1" Background="#FF253A88" Width="192"
+                  TextBlock.Foreground="White" TextBlock.FontSize="42"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">产品1</TextBlock>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">产品2</TextBlock>
+                <Border Grid.Row="0" BorderBrush="White" BorderThickness="0,0,0,1"/>
+            </Grid>
+            
+
+
+
+        </Grid>
+        <!--右侧伸缩导航的实现-->
+
+
     </Grid>
 </Window>
