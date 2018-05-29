@@ -1,0 +1,10 @@
+﻿<Window x:Class="FontExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontFamily="/FontExample;component/Fonts/#GeoSlab703 MdCn BT Medium"
+                   >测试引入*.ttf 格式的字体   2018-05-29</TextBlock>
+    </Grid>
+</Window>
