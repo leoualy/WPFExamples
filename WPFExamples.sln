@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationExample", "Src\Ani
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandExample", "Src\CommandExample\CommandExample.csproj", "{7F14982B-C57C-4617-9EBA-4F97C9716F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontExample", "Src\FontExample\FontExample.csproj", "{661DE6C1-6619-4F93-BA9D-F2168B5AC3CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7F14982B-C57C-4617-9EBA-4F97C9716F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F14982B-C57C-4617-9EBA-4F97C9716F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F14982B-C57C-4617-9EBA-4F97C9716F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661DE6C1-6619-4F93-BA9D-F2168B5AC3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661DE6C1-6619-4F93-BA9D-F2168B5AC3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661DE6C1-6619-4F93-BA9D-F2168B5AC3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661DE6C1-6619-4F93-BA9D-F2168B5AC3CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
