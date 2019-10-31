@@ -84,8 +84,6 @@ namespace AnimationExample
                ellipse.SetValue(Canvas.LeftProperty, (double)this.mRandom.Next(width));
                ellipse.SetValue(Canvas.TopProperty, (double)this.mRandom.Next(height));
            }
-
-
        }
 
         public void Run()

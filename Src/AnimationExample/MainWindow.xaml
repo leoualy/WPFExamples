@@ -6,7 +6,8 @@
         <VisualBrush>
             <VisualBrush.Visual>
                 <!--属性 ClipToBounds=True 必须设置-->
-                <Canvas x:Name="bg_index" ClipToBounds="True" Width="1920" Height="1080" Background="#0a76dd"/>
+                <!--<Canvas x:Name="bg_index" ClipToBounds="True" Width="1920" Height="1080" Background="#0a76dd"/>-->
+                <Canvas x:Name="bg_index" ClipToBounds="True" Width="1920" Height="1080" Background="#3F6CA3"/>
             </VisualBrush.Visual>
         </VisualBrush>
     </Window.Background>

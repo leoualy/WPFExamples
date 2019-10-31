@@ -21,21 +21,24 @@ namespace AnimationExample
     public partial class MainWindow : Window
     {
         BubblesForWPF mBubbles;
+        DigitalRain rain;
         public MainWindow()
         {
             InitializeComponent();
-            mBubbles = new BubblesForWPF(this.bg_index, 80, 160, 50, 2);
-            mBubbles.CreateBubbles(ellipse =>
-            {
-                ellipse.Fill = Brushes.White;
-                ellipse.Opacity = 0.1;
-            });
+            //mBubbles = new BubblesForWPF(this.bg_index, 80, 160, 50, 2);
+            //mBubbles.CreateBubbles(ellipse =>
+            //{
+            //    ellipse.Fill = Brushes.White;
+            //    ellipse.Opacity = 0.1;
+            //});
+            rain = new DigitalRain(this.bg_index);
             CompositionTarget.Rendering += CompositionTarget_Rendering;
         }
 
         void CompositionTarget_Rendering(object sender, EventArgs e)
         {
-                mBubbles.Run();
+            //mBubbles.Run();
+            rain.Run();
         }
     }
 }
